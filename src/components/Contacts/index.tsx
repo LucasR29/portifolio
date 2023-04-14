@@ -80,13 +80,8 @@ export const Contacts = () => {
                   as="a"
                   color="grey2"
                   type="body2"
-                  target="_blank"
-                  href={`mailto=${userData.emailUser}`}
-                  onClick={() =>
-                    (window.location.href = "mailto:nekelpatrick.com")
-                  }
                 >
-                  Send me an email
+                  lrigon2904@gmail.com
                 </Text>
               </ContactCardContent>
             </ContactCard>
