@@ -96,7 +96,7 @@ export const Contacts = () => {
                 //   (window.location.href = "mailto:lrigon29042@gmail.com")
                 // }
                 >
-                  Send me an email
+                  a
                 </Mailto>
               </ContactCardContent>
             </ContactCard>
