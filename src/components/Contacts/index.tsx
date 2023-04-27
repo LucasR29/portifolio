@@ -16,14 +16,6 @@ import { FaWhatsapp, FaEnvelopeOpen, FaLinkedin } from "react-icons/fa";
 import { useRef } from "react";
 import { userData } from "@/utils/userData";
 
-const Mailto = ({ email, subject = '', body = '', children }) => {
-  let params = subject || body ? '?' : '';
-  if (subject) params += `subject=${encodeURIComponent(subject)}`;
-  if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
-
-  return <a href={`mailto:${email}${params}`}>{children}</a>;
-};
-
 export const Contacts = () => {
   const ref = useRef(null);
 
@@ -84,20 +76,18 @@ export const Contacts = () => {
                   Send me an email reporting feedbacks, suggestions and ideas
                 </Text>
 
-                <Mailto
-                  email='lrigon29042@gmail.com'
-                  subject='I saw your portifolio'
-                  body="Let's get in touch"
-                // color="grey2"
-                // type="body2"
-                // target="_blank"
-                // href={`mailto=${userData.emailUser}`}
-                // onClick={() =>
-                //   (window.location.href = "mailto:lrigon29042@gmail.com")
-                // }
+                <Text
+                  as="a"
+                  color="grey2"
+                  type="body2"
+                  target="_blank"
+                  href={`mailto=${userData.emailUser}`}
+                  onClick={() =>
+                    (window.location.href = "mailto:lrigon29042@gmail.com")
+                  }
                 >
-                  a
-                </Mailto>
+                  Send me an email
+                </Text>
               </ContactCardContent>
             </ContactCard>
             <ContactCard>
