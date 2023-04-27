@@ -24,6 +24,14 @@ export const Contacts = () => {
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
 
+  const Mailto = ({ email, subject = '', body = '', children }: any) => {
+    let params = subject || body ? '?' : '';
+    if (subject) params += `subject=${encodeURIComponent(subject)}`;
+    if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
+
+    return <Text color="grey2" as='a' href={`mailto:${email}${params}`}>{children}</Text>;
+  };
+
   return (
     <ContactSection id="contact">
       <Container>
@@ -76,7 +84,7 @@ export const Contacts = () => {
                   Send me an email reporting feedbacks, suggestions and ideas
                 </Text>
 
-                <Text
+                {/* <Text
                   as="a"
                   color="grey2"
                   type="body2"
@@ -87,7 +95,10 @@ export const Contacts = () => {
                   }
                 >
                   Send me an email
-                </Text>
+                </Text> */}
+                <Mailto email="lrigon29042@gmail.com" subject="I saw your portifolio" body="Let's get in touch">
+                  lrigon29042@gmail.com
+                </Mailto>
               </ContactCardContent>
             </ContactCard>
             <ContactCard>
